@@ -1,0 +1,178 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Real Chat App</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="wrapper">
+        <ul id="nav-list">
+          <li class="logged-in">
+            <a href="#" class="trigger" data-target="create-card">Create Room</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="trigger" data-target="account-card">Account</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="trigger" id="logout">Logout</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="trigger" data-target="login-card">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="trigger" data-target="signup-card">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="logout-info">
+
+</section>
+
+<section class="auth">
+    <!-- SIGN UP MODAL -->
+    <section id="signup-card" class="card">
+      <div class="content-card">
+        <h4>Sign up</h4>
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" id="signup-email" class="form-input-field" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="signup-password" class="form-input-field" required />
+            <label for="signup-password">Choose password</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="nick-name" class="form-input-field" required />
+            <label for="nick-name">Choose chat nick-name</label>
+          </div>
+          <button class="button">Sign up</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </section>
+  
+    <!-- LOGIN MODAL -->
+    <section id="login-card" class="card">
+      <div class="content-card">
+        <h4>Login</h4>
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" class="form-input-field" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" class="form-input-field" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="button">Login</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </section>
+    
+    <!-- ACCOUNT MODAL -->
+    <section id="account-card" class="card">
+      <div class="content-card">
+        <h4 class="account">Account details</h4>
+        <div class="account-details"></div>
+      </div>
+    </section>
+  
+    <!-- CREATE GUIDE MODAL -->
+    <section id="create-card" class="card">
+      <div class="content-card">
+        <h4>Create new Chat Room</h4>
+        <form id="create-form">
+          <div class="input-field">
+            <input type="text" id="title" class="form-input-field" required>
+            <label for="title">Room Title</label>
+          </div>
+          <button class="button">Create</button>
+        </form>
+      </div>
+    </section>
+  </section>
+
+  <!-- ////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="container">
+    <div class="wrapper">
+      <h1 class="title">Real Chat App</h1>
+      <div class="chat-rooms">
+        <p>Choose a chatroom:</p>
+        <div class="room-buttons">
+          <button class="button-chat" id="general">#general</button>
+          <button class="button-chat" id="gaming">#gaming</button>
+          <button class="button-chat" id="music">#music</button>
+          <!-- <button class="button-chat" id="sport">#sport</button> -->
+        </div>
+      </div>
+      <div class="chat-window">
+        <ul class="chat-list"></ul>
+      </div>
+      <form class="new-chat">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Your message:</div>
+          </div>
+          <input type="text" id="message" class="form-control" required>
+          <div class="input-group-append">
+            <input type="submit" class="form-button" value="send">
+          </div>
+        </div>
+      </form>
+      <form class="new-name">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Update name:</div>
+          </div>
+          <input type="text" id="name" class="form-control" required>
+          <div class="input-group-append">
+            <input type="submit" class="form-button" value="update">
+          </div>
+        </div>
+        <div class="update-mssg"></div>
+      </form>
+    </div>
+  </div>
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCQVqX7SuJOzO5bqEeTxfpA9j3JOtAAccw",
+        authDomain: "real-chat-room-app.firebaseapp.com",
+        databaseURL: "https://real-chat-room-app.firebaseio.com",
+        projectId: "real-chat-room-app",
+        storageBucket: "real-chat-room-app.appspot.com",
+        messagingSenderId: "215506650476",
+        appId: "1:215506650476:web:28071121cc25d881d0df49",
+        measurementId: "G-1Z3SK0J50M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+    // update firestore settings
+    // db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

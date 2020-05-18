@@ -1,0 +1,425 @@
+body {
+  background-color: #eee;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-size: 20px;
+}
+
+body .container {
+  background-color: #fff;
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.4em;
+  margin: 2% auto;
+  text-align: center;
+}
+
+body .container .wrapper {
+  width: 90%;
+  margin: 5% auto;
+}
+
+body .container .wrapper .title {
+  margin: 2% auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+body .container .wrapper .chat-rooms {
+  margin: 1% auto;
+}
+
+body .container .wrapper .chat-rooms p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+body .container .wrapper .chat-rooms .room-buttons {
+  width: 70%;
+  margin: 2% auto;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+body .container .wrapper .chat-rooms .room-buttons .button-chat {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 23%;
+          flex: 1 1 23%;
+  margin: 1%;
+  padding: 1.5% 2%;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25em;
+  border: 1px solid transparent;
+  background: #43d9be;
+  color: white;
+  -webkit-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
+  cursor: pointer;
+}
+
+body .container .wrapper .chat-rooms .room-buttons .button-chat:hover {
+  color: black;
+}
+
+body .container .wrapper .chat-rooms .room-buttons .button-chat:focus {
+  outline: none;
+}
+
+body .container .wrapper .chat-window {
+  vertical-align: baseline;
+}
+
+body .container .wrapper .chat-window .chat-list {
+  width: 100%;
+}
+
+body .container .wrapper .chat-window .chat-list .list-group-item {
+  position: relative;
+  display: block;
+  padding: 2%;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  text-align: left;
+}
+
+body .container .wrapper .chat-window .chat-list .list-group-item .username {
+  font-weight: bold;
+}
+
+body .container .wrapper .chat-window .chat-list .list-group-item .username::after {
+  content: ':';
+}
+
+body .container .wrapper .chat-window .chat-list .list-group-item .time {
+  color: #999;
+  font-size: 0.7em;
+  margin-top: 0.5%;
+}
+
+body .container .wrapper .chat-window .chat-list .list-group-item .update-mssg {
+  text-align: center;
+  margin: 20px auto;
+}
+
+body .container .wrapper .new-name .update-mssg {
+  text-align: center;
+  margin: 20px auto;
+}
+
+body .container .wrapper .input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  margin: 2% auto;
+}
+
+body .container .wrapper .input-group .input-group-prepend {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .wrapper .input-group .input-group-prepend .input-group-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 90%;
+          flex: 1 1 90%;
+  padding: 5%;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+body .container .wrapper .input-group #message, body .container .wrapper .input-group #name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+body .container .wrapper .input-group .input-group-append {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+}
+
+body .container .wrapper .input-group .input-group-append .form-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+  background: #43d9be;
+  color: white;
+  -webkit-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
+  cursor: pointer;
+}
+
+body .container .wrapper .input-group .input-group-append .form-button:hover {
+  color: black;
+}
+
+body .container .wrapper .input-group .input-group-append .form-button:focus {
+  outline: none;
+}
+
+.logout-info {
+  width: 96%;
+  display: block;
+  margin: 2% auto;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.logout-info .logout-message {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2% 0;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.4em;
+  -webkit-transition: background-color 1s ease, color 1s ease;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.logout-info .alert {
+  background-color: red;
+  color: white;
+  -webkit-transition: background-color 2s ease;
+  transition: background-color 2s ease;
+}
+
+.auth {
+  line-height: 1.5;
+}
+
+nav {
+  background-color: #43d9be;
+}
+
+nav .wrapper {
+  width: 98%;
+  margin: 0 auto;
+}
+
+nav .wrapper #nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-left: 80%;
+}
+
+nav .wrapper #nav-list li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  margin: 0 1%;
+  text-align: center;
+  display: none;
+}
+
+nav .wrapper #nav-list li .trigger {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+nav .wrapper #nav-list li .trigger:hover {
+  background-color: #35AD98;
+  color: #fff;
+}
+
+.card {
+  z-index: 1002;
+  display: block;
+  -webkit-transform: scaleX(0) scaleY(0);
+          transform: scaleX(0) scaleY(0);
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-out, -webkit-transform 0.2s ease;
+  transition: opacity 0.1s ease-out, -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.1s ease-out;
+  transition: transform 0.2s ease, opacity 0.1s ease-out, -webkit-transform 0.2s ease;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card .content-card {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10%;
+  max-height: 70%;
+  padding: 24px;
+  background-color: #eee;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.card .content-card h4 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.card .content-card .account {
+  text-align: center;
+}
+
+.card .content-card .input-field {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin: 2% 0;
+  height: auto;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.card .content-card .input-field .form-input-field {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  outline: none;
+  height: 3em;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.card .content-card .input-field .form-input-field:focus {
+  border-bottom: 1px solid #43d9be;
+  -webkit-box-shadow: 0 1px 0 0 #43d9be;
+          box-shadow: 0 1px 0 0 #43d9be;
+}
+
+.card .content-card .input-field .form-input-field:focus + label {
+  -webkit-transform: translateY(-14px) scale(0.8);
+          transform: translateY(-14px) scale(0.8);
+  color: #43d9be;
+  font-weight: 500;
+}
+
+.card .content-card .input-field .form-input-field:valid {
+  border-bottom: 1px solid #43d9be;
+  -webkit-box-shadow: 0 1px 0 0 #43d9be;
+          box-shadow: 0 1px 0 0 #43d9be;
+}
+
+.card .content-card .input-field .form-input-field:valid + label {
+  -webkit-transform: translateY(-14px) scale(0.8);
+          transform: translateY(-14px) scale(0.8);
+  color: #43d9be;
+  font-weight: 500;
+}
+
+.card .content-card .input-field label {
+  color: #9e9e9e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  cursor: text;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translateY(14px);
+          transform: translateY(14px);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+.card .content-card button {
+  text-transform: uppercase;
+  padding: 10 14px;
+  color: white;
+  background-color: #43d9be;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.card .content-card .account-details {
+  text-align: center;
+}
+
+.card .content-card .error {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-active {
+  -webkit-transform: scaleX(1) scaleY(1);
+          transform: scaleX(1) scaleY(1);
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease-out;
+  transition: transform 0.2s ease, opacity 0.2s ease-out, -webkit-transform 0.2s ease;
+}
+/*# sourceMappingURL=styles.css.map */
