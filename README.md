@@ -10,9 +10,6 @@ Project is created with:
 * CSS3
 * JavaScript
 * Firebase (Firestore Database, Authentication)
-
-## Live
-https://makarcodes.github.io/Real_Chat_App/
 	
 ## Setup
 To run this project, clone it and open with live server:
