@@ -1,6 +1,8 @@
 ## General info
-This is live chat-room application with login / sign up panel and authentication.
-Logged user can chat in different chat-rooms and add his own room.
+Live chat-room application allows users to communicate with others in different chat-rooms.
+To join chat, user have to be logged in. I've implemented aunthentication and build simple logging panel.
+Logged users can also adding new char-rooms.
+Messages are stored in Firestore db.
 
 ![Gif](./img/JSMesBbIla.gif)
 	
